@@ -1,0 +1,41 @@
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+@mixin generate-flex-sizes($size) {
+  .flex-size-#{$size} { flex: $size }
+}
+
+@include generate-flex-sizes(1);
+
+.flex-column-grow{
+  flex: 1 1 auto;
+}
+
+.flex-column-shrink{
+  flex: 0 1 auto; // default
+}
+
+.flex-vertical-center{
+  display: flex;
+  align-items: center;
+}
+
+.flex-horizontal-center{
+  display: flex;
+  justify-content: center;
+}
+
+.flex-vertical-top{
+  display: flex;
+  align-items: start;
+}
+
+.flex-wrap{
+  flex-wrap: wrap;
+}
+
+.flex-no-wrap{
+  flex-wrap: nowrap;
+}

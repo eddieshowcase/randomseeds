@@ -1,0 +1,55 @@
+// Spacing
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Base size to be used when you want to add space between two components. Use this to set margins or paddings.
+// Use multiples of this if you need larger or smaller sizes (e.g. `$base-space-size * 2`, `$base-space-size / 2`).
+$base-space-size: rem-calc(20) !default;
+
+$space-padding: $base-space-size !default;
+$space-padding-small: $base-space-size / 2 !default;      //  10
+$space-padding-tiny: $base-space-size / 4 !default;       //  5
+$space-padding-min: $base-space-size / 10 !default;       //  2
+$space-padding-large: $base-space-size * 1.5 !default;    //  30
+$space-padding-huge: $base-space-size * 2 !default;       //  40
+$space-padding-max: $base-space-size * 3 !default;        //  60
+
+$space-margin: $base-space-size !default;
+$space-margin-small: $base-space-size / 2 !default;
+$space-margin-tiny: $base-space-size / 4 !default;
+$space-margin-min: $base-space-size / 10 !default;        //  2
+$space-margin-large: $base-space-size * 1.5 !default;
+$space-margin-huge: $base-space-size * 2 !default;
+$space-margin-max: $base-space-size * 3 !default;         //  60
+
+// Borders
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+$base-border-size: rem-calc(1) !default;
+$base-border-color: #4A595F !default;
+
+$border-size: $base-border-size !default;
+$border-size-large: $base-border-size * 2 !default;
+$border-size-huge: $base-border-size * 4 !default;
+
+
+// z-index
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// low z-index layer, e.g. drop-downs
+$z-index-low: 50 !default;
+// medium z-index layer, e.g. fixed top-bar
+$z-index-medium: 1000 !default;
+// high z-index layer, e.g. modals
+$z-index-high: 2000 !default;
+
+// Colors
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// Use this to color your border when you want it to be visible. We use this for example
+// to add line under the top-bar and to separate panel heading from its content.
+$border-color: #d3d3d3 !default;
+
+// Text
+// - - - - - - - - - - - - - - - - - - - - - - - - -
+
+// These are the word selectors to help handle specificity selection of word elements
+$word-selectors: 'h1, h2, h3, h4, h6, h6, span, p';

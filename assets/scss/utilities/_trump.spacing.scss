@@ -1,0 +1,71 @@
+/*
+Spacing
+- - - - - - - - - - - - - - - - - - - - - - - - -
+
+Helper classes for spacing like margin and padding.
+
+Class names follow this convention:
+
+    .[type][direction][size]
+
+* type: `p` for `padding`, `m` for `margin`
+* direction: `v` for vertical, `h` for horizontal, `t` for top, `l` for left etc.
+* size: `+` for large, `++` for huge, `-` for small, `--` for tiny
+
+Examples:
+
+* `p++` will give you a huge (`++`) padding (`p`)
+* `mb0` will give you zero margin (`m`) bottom (`b`)
+* `mv+` will give you a large (`+`) vertical (`v`) margin (`m`)
+
+You can also limit to which screen sizes padding or margin will be applied by prefixing breakpoint name, e.g. `small-mh0`,
+`medium-mh`, `large-mh+`
+
+*/
+
+
+// generates all directional variants for the specified size (e.g. p, ph, pv, pt, pb, pl, pr)
+@mixin generate-directions($class-prefix, $class-postfix, $property, $size) {
+  .#{$class-prefix}#{$class-postfix} { #{$property}: $size !important; }
+  .#{$class-prefix}h#{$class-postfix} { #{$property}-#{$default-float}: $size !important; #{$property}-#{$opposite-direction}: $size !important;}
+  .#{$class-prefix}v#{$class-postfix} { #{$property}-top: $size !important; #{$property}-bottom: $size !important;}
+  .#{$class-prefix}t#{$class-postfix} { #{$property}-top: $size !important;}
+  .#{$class-prefix}b#{$class-postfix} { #{$property}-bottom: $size !important;}
+  .#{$class-prefix}l#{$class-postfix} { #{$property}-#{$default-float}: $size !important;}
+  .#{$class-prefix}r#{$class-postfix} { #{$property}-#{$opposite-direction}: $size !important;}
+}
+
+// generates all sizes for the specified property
+@mixin generate-spacing-classes($class-prefix) {
+  @include generate-directions(#{$class-prefix}p, null, padding, $space-padding);
+  @include generate-directions(#{$class-prefix}p, \-, padding, $space-padding-small);
+  @include generate-directions(#{$class-prefix}p, \-\-, padding, $space-padding-tiny);
+  @include generate-directions(#{$class-prefix}p, \-\-\-, padding, $space-padding-min);
+  @include generate-directions(#{$class-prefix}p, \+, padding, $space-padding-large);
+  @include generate-directions(#{$class-prefix}p, \+\+, padding, $space-padding-huge);
+  @include generate-directions(#{$class-prefix}p, \+\+\+, padding, $space-padding-max);
+  @include generate-directions(#{$class-prefix}p, 0, padding, 0);
+
+  @include generate-directions(#{$class-prefix}m, null, margin, $space-margin);
+  @include generate-directions(#{$class-prefix}m, \-, margin, $space-margin-small);
+  @include generate-directions(#{$class-prefix}m, \-\-, margin, $space-margin-tiny);
+  @include generate-directions(#{$class-prefix}m, \-\-\-, margin, $space-margin-min);
+  @include generate-directions(#{$class-prefix}m, \+, margin, $space-margin-large);
+  @include generate-directions(#{$class-prefix}m, \+\+, margin, $space-margin-huge);
+  @include generate-directions(#{$class-prefix}m, \+\+\+, margin, $space-margin-max);
+  @include generate-directions(#{$class-prefix}m, 0, margin, 0);
+}
+
+@include generate-spacing-classes(null);
+
+@media #{$small-only} {
+  @include generate-spacing-classes(small\-);
+}
+
+@media #{$medium-only} {
+  @include generate-spacing-classes(medium\-);
+}
+
+@media #{$large-up} {
+  @include generate-spacing-classes(large\-);
+}

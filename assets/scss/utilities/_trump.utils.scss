@@ -1,0 +1,58 @@
+.vertical-center{
+  display: table;
+  width: 100%;
+  height: 100%;
+  & > * {
+    display: table-cell;
+    vertical-align: middle;
+  }
+}
+
+.relative {
+  position: relative;
+}
+
+.absolute{
+  position: absolute;
+}
+
+.full-width{
+  width: 100% !important;
+}
+
+.full-max-width{
+  max-width: 100%;
+}
+
+.full-height{
+  height: 100%;
+}
+
+.vertical-scrollable {
+  overflow-y:scroll;
+}
+
+.angucomplete-dropdown {
+  overflow-y: auto;
+  max-height: 200px;
+  max-width: 100%;
+  overflow-x: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  word-wrap: normal;
+}
+
+/** Utility used to essentially remove z-index
+ *  (used in universal search page - to prevent covering scrollbar)
+ *  TODO: find a way to handle scrollbars for all types of modals
+ */
+.no-z-index {
+  z-index: -1;
+}
+
+.inline-block {
+  display: inline-block;
+}
+.display-block {
+  display: block;
+}

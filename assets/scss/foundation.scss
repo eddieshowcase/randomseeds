@@ -94,3 +94,45 @@
 @import "templates/page-sidebar-left";
 @import "templates/page-full-width";
 @import "templates/single-post";
+
+// Utilities
+
+// This file orders components using a convention called ITCSS (Inverted Triangle CSS)
+// Essentially grouping styling by specificity (starting from broad to specific)
+
+// Organized in these categories :
+/*    _______________
+ *    \_____________/ 1.  Settings
+ *     \___________/ 2.  Tools
+ *      \_________/ 3.  Generic
+ *       \_______/ 4.  Base
+ *        \_____/ 5.  Objects
+ *         \___/ 6.  Components
+ *          \_/ 7.  Trumps
+ */
+
+/* ------------------------------------------- */
+// 1. Settings (variables, brand colors, etc.)
+/* ------------------------------------------- */
+@import "utilities/_global-variables-theme";
+@import "utilities/_global-variables";
+
+/* ------------------------------------------- */
+// 2. Tools (helper functions / public mixins)
+/* ------------------------------------------- */
+@import "utilities/_global-mixins";
+
+/* ------------------------------------------- */
+// 6. Components (Designed pieces of UI, only classes,
+// more explicit naming : .products-list {})
+/* ------------------------------------------- */
+@import "utilities/_util.flex-grid.scss";
+
+/* ------------------------------------------- */
+// 7. Trumps (overrides, helpers, utilities, only affect one piece of the DOM at a time,
+// usually carries !important-type items)
+/* ------------------------------------------- */
+@import "utilities/trump.spacing";
+@import "utilities/trump.utils";
+@import "utilities/trump.borders";
+

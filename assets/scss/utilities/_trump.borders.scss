@@ -1,0 +1,42 @@
+/*
+Borders
+- - - - - - - - - - - - - - - - - - - - - - - - -
+
+Helper classes for adding borders to elements
+
+Class names follow this convention:
+
+    .[type][direction][size]
+
+* type: `border` for the border styling attribute
+* direction: `v` for vertical, `h` for horizontal, `t` for top, `l` for left etc.
+* size: `+` for large, `++` for huge (none for default)
+
+Examples:
+
+* `border++` will give you a huge (`++`) border (`border`)
+* `borderb0` will give you zero border (`m`) on the bottom (`b`)
+* `borderv+` will give you a large (`+`) vertical (`v`) borders (`m`)
+
+*/
+
+@mixin generate-color-classes($class-prefix, $property){
+  .#{$class-prefix}-default { #{$property}: $body-font-color !important; }
+  .#{$class-prefix}-primary { #{$property}: $primary-color !important; }
+  .#{$class-prefix}-secondary { #{$property}: $secondary-color !important; }
+  .#{$class-prefix}-alert { #{$property}: $alert-color !important; }
+  .#{$class-prefix}-success { #{$property}: $success-color !important; }
+  .#{$class-prefix}-warning { #{$property}: $warning-color !important; }
+  .#{$class-prefix}-info { #{$property}: $info-color !important; }
+}
+
+// generates all sizes for the specified property
+@mixin generate-border-classes($class-prefix) {
+  @include generate-directions(#{$class-prefix}border, null, border, $border-size solid);
+  @include generate-directions(#{$class-prefix}border, \+, border, $border-size-large solid);
+  @include generate-directions(#{$class-prefix}border, \+\+, border, $border-size-huge solid);
+  @include generate-directions(#{$class-prefix}border, 0, border, 0);
+}
+
+@include generate-border-classes(null);
+@include generate-color-classes(border, border-color);

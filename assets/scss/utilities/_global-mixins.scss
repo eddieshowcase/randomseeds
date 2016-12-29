@@ -1,0 +1,24 @@
+@mixin focus-outline($size, $color, $shadow) {
+  box-shadow: inset $size $size 0 $color,
+                inset (-$size) $size 0 $color,
+                inset $size (-$size) 0 $color,
+                inset (-$size) (-$size) 0 $color,
+                $shadow;
+}
+
+@mixin word-wrap {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  word-break: keep-all;
+}
+
+@mixin fix-flex {
+  // prevent overflow of flex item
+  // https://bugzilla.mozilla.org/show_bug.cgi?id=1108514
+  min-width: 0;
+}
+
+@mixin ellipsis-background($color) {
+  background: linear-gradient(to #{$opposite-direction}, rgba($color, 0), $color 80%, $color 100%);
+}
+
