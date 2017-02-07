@@ -58,14 +58,14 @@ You can also limit to which screen sizes padding or margin will be applied by pr
 
 @include generate-spacing-classes(null);
 
-@media #{$small-only} {
+@include breakpoint(small only) {
   @include generate-spacing-classes(small\-);
 }
 
-@media #{$medium-only} {
+@include breakpoint(medium only) {
   @include generate-spacing-classes(medium\-);
 }
 
-@media #{$large-up} {
+@include breakpoint(large up) {
   @include generate-spacing-classes(large\-);
 }
