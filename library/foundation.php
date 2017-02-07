@@ -65,7 +65,7 @@ endif;
 // Add Foundation 'active' class for the current menu item.
 if ( ! function_exists( 'foundationpress_active_nav_class' ) ) :
 function foundationpress_active_nav_class( $classes, $item ) {
-	if ( 1 == $item->current || true == $item->current_item_ancestor ) {
+	if ( 1 === $item->current || true === $item->current_item_ancestor ) {
 		$classes[] = 'active';
 	}
 	return $classes;
@@ -91,10 +91,12 @@ add_filter( 'wp_list_pages', 'foundationpress_active_list_pages_class', 10, 2 );
 endif;
 
 if ( ! class_exists( 'Foundationpress_Comments' ) ) :
-class Foundationpress_Comments extends Walker_Comment{
+class Foundationpress_Comments extends Walker_Comment {
 
 	// Init classwide variables.
 	var $tree_type = 'comment';
+
+	// Comment ID
 	var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
 
 	/** CONSTRUCTOR
