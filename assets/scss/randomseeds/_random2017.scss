@@ -54,33 +54,33 @@ body {
   background-color: transparent;
 }
 
-/* Tablet and desktop menu */
-.nav-bar {
-
-  .menu .home a {
-    font-size: 1rem;
-    color: #0a0a0a;
-  }
-
+// Tablet and desktop menu
+.top-bar {
   .menu a {
-    height: 45px;
-    line-height: 45px;
-    color: #0a0a0a;
-    padding-top: 0;
-    padding-bottom: 0;
-    font-weight: bold;
-    font-size: 1rem;
-    line-height: 1;
+    color: #222;
+    height: 70px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.5;
 
     &:hover:not(.button) {
-      background-color: inherit;
+      color: #767676;
+      background-color: transparent;
     }
   }
 
-  .menu > li {display: inline-block;}
-  .menu>li:not(.menu-text)>a { padding: 1rem; }
-  .menu li:not(:last-child) { border-right: 1px solid #4e4e4e; }
+  .menu>li:not(.menu-text)>a {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+    padding-left: 0;
+    padding-right: 2rem;
+  }
+
+  .menu li:not(:last-child) { border-right: none; }
+
 }
+
+.top-bar.men
 
 .menu .active > a {
   background: inherit;
