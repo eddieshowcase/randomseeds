@@ -33,8 +33,8 @@
 		<div id="cover-wrap">
 
 			<!-- Title-->
-			<div id="site-branding" class="pagew flex-row flex-vertical-center">
-				<div class="flex-column-shrink">
+			<div id="site-branding-wrap"  class="pagew flex-row flex-vertical-center">
+				<div id="site-branding"  class="flex-column-shrink">
 					<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					<div class="site-desc"><?php bloginfo( 'description' ); ?></div>
 				</div>
@@ -42,24 +42,22 @@
 
 		</div>
 
-		<div id="nav-wrap" class="pagew">
+		<div id="nav-wrap">
 
 
 			<!-- Mobile-->
-			<div class="title-bar" data-responsive-toggle="site-navigation">
+			<div class="title-bar text-center" data-responsive-toggle="site-navigation">
 				<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 				<div class="title-bar-title">
-					<a href="#" data-toggle="mobile-menu">MENU</a>
+					<a href="#" data-toggle="mobile-menu">Menu</a>
 					<!--				<a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">MENU--><?php //bloginfo( 'name' ); ?><!--</a>-->
 				</div>
 			</div>
 
 			<!-- Desktop -->
-			<nav id="site-navigation" class="main-navigation top-bar" role="navigation">
+			<nav id="site-navigation" class="main-navigation top-bar pagew" role="navigation">
 				<div class="top-bar-left">
-<!--					<ul class="menu">-->
-<!--						<li class="home"><a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">--><?php //bloginfo( 'name' ); ?><!--</a></li>-->
-<!--					</ul>-->
+
 					<?php foundationpress_top_bar_r(); ?>
 
 					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
