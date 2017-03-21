@@ -46,7 +46,7 @@
 
 
 			<!-- Mobile-->
-			<div class="title-bar text-center" data-responsive-toggle="site-navigation">
+			<div class="title-bar align-center" data-responsive-toggle="site-navigation">
 				<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 				<div class="title-bar-title">
 					<a href="#" data-toggle="mobile-menu">Menu</a>
