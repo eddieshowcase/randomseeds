@@ -90,21 +90,38 @@ body {
   padding-left: 0.9375rem;
 }
 
-.pagequip {
-  margin: 4rem 0 4rem;
+.homepage h2 {
+  font-size: 1.65rem;
+}
 
-  //font-weight: 800;
-  //font-size: 3.45rem;
-  //line-height: 1.25;
-  //letter-spacing: 0.08em;
+.homepage img {
+  width: 100%;
+  min-height: 150px;
+}
 
-  font-size: 64px;
-  line-height: 1.1em;
-  text-transform: none;
-  text-decoration: none;
-  letter-spacing: 0px;
-  font-weight: 800;
+.homepage a {
+  color: #222;
+}
 
+.homepage a:hover {
+  color: #767676;
+}
+
+.homepage a:hover img, .homepage a:focus img {
+  opacity: 0.7;
+}
+
+.homepage a img {
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: opacity 0.2s;
+  transition: opacity 0.2s;
+}
+
+#quip {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 3rem;
 }
 
 #footer-container {
@@ -148,6 +165,15 @@ body {
     font-weight: 800;
     line-height: 1.5;
   }
+
+  .homepage h2 {
+    font-size: 1.35rem;
+  }
+
+  #quip {
+    font-size: 1.5rem;
+  }
+
 }
 
 @include breakpoint(medium only) {

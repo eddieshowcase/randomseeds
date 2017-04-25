@@ -44,13 +44,11 @@
 
 		<div id="nav-wrap">
 
-
 			<!-- Mobile-->
 			<div class="title-bar align-center" data-responsive-toggle="site-navigation">
 				<button class="menu-icon" type="button" data-toggle="mobile-menu"></button>
 				<div class="title-bar-title">
-					<a href="#" data-toggle="mobile-menu">Menu</a>
-					<!--				<a href="--><?php //echo esc_url( home_url( '/' ) ); ?><!--" rel="home">MENU--><?php //bloginfo( 'name' ); ?><!--</a>-->
+					<a href="#" data-toggle="mobile-menu">MENU</a>
 				</div>
 			</div>
 

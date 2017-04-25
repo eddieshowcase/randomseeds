@@ -5,35 +5,52 @@
 
 get_header(); ?>
 
-<div id="page" role="main">
-	<article class="main-content">
-	<?php if ( have_posts() ) : ?>
+<div id="page" class="homepage" role="main">
+	<article class="main-content p0">
+
+<!--		<h1 class="text-center mb-">A portfolio of sorts.</h1>-->
+		<h1 id="quip">
+			<?php
+			$page_id = get_queried_object_id();
+			echo get_post_meta( $page_id, 'quip',true);
+			?>
+		</h1>
+
+		<?php if ( have_posts() ) : ?>
 
 		<div class="row small-up-1 medium-up-2 large-up-3">
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
 
+				<div class="column mb">
 
-
-				<div class="column">
-
-					<?php the_post_thumbnail(); ?>
-
-<!--					--><?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
+					<?php //get_template_part( 'template-parts/content', get_post_format() ); ?>
 
 					<div id="post-<?php the_ID(); ?>" <?php post_class('blogpost-entry'); ?>>
-						<header>
-							<h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-							<?php foundationpress_entry_meta(); ?>
-						</header>
-						<div class="entry-content">
-							<?php the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
-						</div>
-						<footer>
-							<?php $tag = get_the_tags(); if ( $tag ) { ?><p><?php the_tags(); ?></p><?php } ?>
-						</footer>
-						<hr />
+
+						<a href="<?php the_permalink(); ?>">
+
+						 	<?php //the_post_thumbnail(); ?>
+							<img src="<?php the_post_thumbnail_url(); ?>"/>
+
+							<header>
+								<h2 class="mb0"><?php the_title(); ?></h2>
+								Some project 1-sentence summary to go here.
+							</header>
+
+						</a>
+<!--						<hr />-->
+
+<!--						<div class="entry-content">-->
+<!--							--><?php //the_content( __( 'Continue reading...', 'foundationpress' ) ); ?>
+<!--						</div>-->
+
+
+<!--						<footer>-->
+<!--							--><?php //$tag = get_the_tags(); if ( $tag ) { ?><!--<p>--><?php //the_tags(''); ?><!--</p>--><?php //} ?>
+<!--						</footer>-->
+
 					</div>
 
 				</div>
@@ -61,6 +78,7 @@ get_header(); ?>
 		<?php endif; ?>
 
 	</article>
+
 	<?php get_sidebar(); ?>
 
 </div>
