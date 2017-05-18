@@ -1,5 +1,16 @@
 body {
-  background-color: #FAFAFA;
+  //background-color: #FAFAFA;
+  background-color: #EEE;
+}
+
+$border-style: 1px solid #ccc;
+.border-randomseeds {
+  border: $border-style;
+}
+.border-bottom-half {
+  border-left: $border-style;
+  border-right: $border-style;
+  border-bottom: $border-style;
 }
 
 .pagew {
@@ -11,7 +22,7 @@ body {
 
 #cover-wrap {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%),
-  url(//localhost:3000/randomseeds/wordpress/wp-content/uploads/2015/03/StockSnap_QED8GG50PU_2k.jpg);
+  url(//localhost:3000/randomseeds/images/random_rubix_2k.jpg);
   //background-image: url(//localhost:3000/randomseeds/wordpress/wp-content/uploads/2015/03/StockSnap_QED8GG50PU_2k.jpg);
   background-size: cover;
   background-position: center;
@@ -40,8 +51,6 @@ body {
 }
 
 .site-name {
-  //transition: opacity 0.2s;
-
   font-weight: 800;
   font-size: 2.25rem;
   line-height: 1.25;
@@ -53,6 +62,10 @@ body {
 .site-desc {
   font-size: 1rem;
   opacity: 0.8;
+}
+
+#nav-wrap {
+  background-color: #fff;
 }
 
 .top-bar, .top-bar ul {
@@ -124,8 +137,36 @@ body {
   margin-bottom: 3rem;
 }
 
+.card-randomseeds {
+  height: 100%;
+  background-color: #fff;
+}
+
 #footer-container {
-  border-top: 1px solid #eee;
+  border-top: $border-style;
+}
+
+
+.round-corners {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.round-top-corners {
+  -webkit-border-top-left-radius: 5px;
+  -webkit-border-top-right-radius: 5px;
+  -moz-border-radius-topleft: 5px;
+  -moz-border-radius-topright: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+.round-bottom-corners {
+  -webkit-border-bottom-left-radius: 5px;
+  -webkit-border-bottom-right-radius: 5px;
+  -moz-border-radius-bottomleft: 5px;
+  -moz-border-radius-bottomright: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
 }
 
 @include breakpoint(small only) {
@@ -138,7 +179,7 @@ body {
   }
 
   #site-navigation {
-    border-bottom: 1px solid #eee;
+    border-bottom: $border-style;
   }
 
   .top-bar, .top-bar ul {
@@ -146,7 +187,7 @@ body {
   }
 
   .top-bar {
-    .menu li:not(:last-child) { border-bottom: 1px solid #eee; }
+    .menu li:not(:last-child) { border-bottom: $border-style; }
   }
 
   .top-bar .menu > li:not(.menu-text) > a {
@@ -155,7 +196,7 @@ body {
 
   .title-bar {
     background: inherit;
-    border-bottom: 1px solid #eee;
+    border-bottom: $border-style;
   }
 
   .title-bar-title a {
@@ -185,7 +226,7 @@ body {
 @include breakpoint(medium up) {
 
   #nav-wrap {
-    border-bottom: 1px solid #eee;
+    border-bottom: $border-style;
   }
 
   .top-bar {
