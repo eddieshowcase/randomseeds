@@ -20,7 +20,19 @@
  <?php while ( have_posts() ) : the_post(); ?>
    <article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
        <header>
-           <h1 class="entry-title"><?php the_title(); ?></h1>
+<!--           <h1 class="entry-title">--><?php //the_title(); ?><!--</h1>-->
+					 <h1 id="quip">
+						 <?php
+						 $page_id = get_queried_object_id();
+						 $page_quip = get_post_meta( $page_id, 'quip',true);
+						 if ($page_quip !== '') {
+							 echo $page_quip;
+						 } else {
+							 the_title();
+						 }
+						 ?>
+					 </h1>
+
        </header>
        <?php do_action( 'foundationpress_page_before_entry_content' ); ?>
        <div class="entry-content">

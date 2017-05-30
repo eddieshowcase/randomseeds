@@ -16,7 +16,18 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 	<article <?php post_class('main-content') ?> id="post-<?php the_ID(); ?>">
 		<header>
-			<h1 class="entry-title"><?php the_title(); ?></h1>
+<!--			<h1 class="entry-title">--><?php //the_title(); ?><!--</h1>-->
+			<h1 id="quip">
+				<?php
+				$page_id = get_queried_object_id();
+				$page_quip = get_post_meta( $page_id, 'quip',true);
+				if ($page_quip !== '') {
+					echo $page_quip;
+				} else {
+					the_title();
+				}
+				?>
+			</h1>
 			<?php foundationpress_entry_meta(); ?>
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>

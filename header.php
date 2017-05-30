@@ -33,7 +33,7 @@
 		<div id="cover-wrap">
 
 			<!-- Title-->
-			<div id="site-branding-wrap"  class="pagew flex-row flex-vertical-center">
+			<div id="site-branding-wrap"  class="page-wide flex-row flex-vertical-center">
 				<div id="site-branding"  class="flex-column-shrink">
 					<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 					<div class="site-desc"><?php bloginfo( 'description' ); ?></div>
@@ -53,7 +53,7 @@
 			</div>
 
 			<!-- Desktop -->
-			<nav id="site-navigation" class="main-navigation top-bar pagew" role="navigation">
+			<nav id="site-navigation" class="main-navigation top-bar page-wide" role="navigation">
 				<div class="top-bar-left">
 
 					<?php foundationpress_top_bar_r(); ?>

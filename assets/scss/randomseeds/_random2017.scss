@@ -13,12 +13,36 @@ $border-style: 1px solid #ccc;
   border-bottom: $border-style;
 }
 
-.pagew {
+/////////////////////////////////////////////////
+// DEFAULT TO 100% WIDTH...
+// I want to use row/column grid stuff to manage layouts, sometimes fullwidth, other times page-wide.
+// Use class "pagew" for default page width
+#page-full {
+  width: 100% !important;
+  max-width: 100%;
+}
+#single-post{
+  max-width: 100%;
+}
+#single-post .main-content {
+  width: 100% !important;
+}
+#page {
+  max-width: 100%;
+}
+#page .main-content {
+  width: 100% !important;
+}
+.row {
+  max-width: 100%;
+}
+.page-wide {
   //TODO: this is probably a variable somewhere
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
 }
+/////////////////////////////////////////////////
 
 #cover-wrap {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%),
@@ -96,11 +120,8 @@ $border-style: 1px solid #ccc;
 
 }
 
-#page .main-content {
-  width: 100%;
-
-  padding-right: 0.9375rem;
-  padding-left: 0.9375rem;
+.homepage {
+  background-color: #eee;
 }
 
 .homepage h2 {
