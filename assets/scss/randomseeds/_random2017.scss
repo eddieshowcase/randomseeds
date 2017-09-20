@@ -1,3 +1,8 @@
+
+$root_dev: "//localhost:3000/randomseeds/";
+$root_prod: "http://randomseeds.com/";
+$myroot: $root_prod;
+
 body {
   //background-color: #FAFAFA;
   background-color: #EEE;
@@ -16,7 +21,7 @@ $border-style: 1px solid #ccc;
 /////////////////////////////////////////////////
 // DEFAULT TO 100% WIDTH...
 // I want to use row/column grid stuff to manage layouts, sometimes fullwidth, other times page-wide.
-// Use class "pagew" for default page width
+// Use class "page-wide" for default page width
 #page-full {
   width: 100% !important;
   max-width: 100%;
@@ -46,7 +51,7 @@ $border-style: 1px solid #ccc;
 
 #cover-wrap {
   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.3) 75%, rgba(0, 0, 0, 0.3) 100%),
-  url(//localhost:3000/randomseeds/images/random_rubix_2k.jpg);
+  url(#{$myroot}images/random_rubix_2k.jpg);
   //background-image: url(//localhost:3000/randomseeds/wordpress/wp-content/uploads/2015/03/StockSnap_QED8GG50PU_2k.jpg);
   background-size: cover;
   background-position: center;

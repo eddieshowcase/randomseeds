@@ -28,7 +28,7 @@ get_header(); ?>
 				}
 				?>
 			</h1>
-			<?php foundationpress_entry_meta(); ?>
+<!--			--><?php //foundationpress_entry_meta(); ?>
 		</header>
 		<?php do_action( 'foundationpress_post_before_entry_content' ); ?>
 		<div class="entry-content">
@@ -44,7 +44,7 @@ get_header(); ?>
 					)
 				);
 			?>
-			<p><?php the_tags(); ?></p>
+<!--			<p>--><?php //the_tags(); ?><!--</p>-->
 		</footer>
 		<?php the_post_navigation(); ?>
 		<?php do_action( 'foundationpress_post_before_comments' ); ?>

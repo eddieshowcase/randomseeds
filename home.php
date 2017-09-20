@@ -40,7 +40,8 @@ get_header(); ?>
 							<?php
 								$post_id = get_the_ID();
 								$post_thumb_path = get_post_meta( $post_id, 'thumb', true);
-								$post_thumb = "http://localhost/randomseeds/images/thumbs/".$post_thumb_path;
+								//$post_thumb = "http://localhost/randomseeds/images/thumbs/".$post_thumb_path;
+								$post_thumb = "http://randomseeds.com/images/thumbs/".$post_thumb_path;
 							?>
 							<img src="<?php echo $post_thumb ?>"/>
 
