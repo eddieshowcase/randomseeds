@@ -31,17 +31,38 @@ get_header(); ?>
 
 						<a href="<?php the_permalink(); ?>">
 
-						 	<?php //the_post_thumbnail(); ?>
-<!--							<img src="--><?php //the_post_thumbnail_url(); ?><!--" class="round-top-corners"/>-->
-<!--							<div class="round-top-corners"
+							<?php //the_post_thumbnail(); ?>
+							<!--							<img src="--><?php //the_post_thumbnail_url(); ?><!--" class="round-top-corners"/>-->
+							<!--							<div class="round-top-corners"
 									 style="background: url(<?php //the_post_thumbnail_url(); ?>); background-size: cover; background-position: center; height: 320px;">
 							</div> -->
 
 							<?php
-								$post_id = get_the_ID();
-								$post_thumb_path = get_post_meta( $post_id, 'thumb', true);
+							$post_id = get_the_ID();
+
+							$post_thumb_path = get_post_meta( $post_id, 'thumb', true);
+
+							// use a specific post thumbnail first
+							if (!empty($post_thumb_path)) {
 								//$post_thumb = "http://localhost/randomseeds/images/thumbs/".$post_thumb_path;
 								$post_thumb = "http://randomseeds.com/images/thumbs/".$post_thumb_path;
+							}
+							// else use featured image if one exists
+							else if (has_post_thumbnail()) {
+								$size = "medium_large";
+								$image_id = get_post_thumbnail_id();
+								$image_attrs = wp_get_attachment_image_src($image_id, $size);
+								$post_thumb = $image_attrs[0];
+								//$post_thumb = the_post_thumbnail_url();
+							}
+							// else grab the first image found in the post
+							// TODO
+
+							// last case: use a default stock image
+							if (empty($post_thumb)) {
+								$post_thumb = "http://randomseeds.com/images/random_rubix_2k.jpg";
+							}
+
 							?>
 							<img src="<?php echo $post_thumb ?>"/>
 

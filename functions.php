@@ -63,3 +63,7 @@ function special_nav_class ($classes, $item) {
 	}
 	return $classes;
 }
+
+// stop wordpress from filtering my html and adding <p></p> tags:
+remove_filter( 'the_content', 'wpautop' );
+remove_filter( 'the_excerpt', 'wpautop' );
