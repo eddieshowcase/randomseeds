@@ -51,6 +51,12 @@ $border-style: 1px solid #ccc;
 hr {
   max-width: 100%;
 }
+
+// override img max-width:100% to prevent the stretching effect in my flex layouts
+.card img {
+  width: 100%;
+}
+
 /////////////////////////////////////////////////
 
 #cover-wrap {
