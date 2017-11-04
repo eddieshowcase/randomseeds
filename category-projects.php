@@ -9,7 +9,7 @@ get_header(); ?>
 	<article class="main-content p0">
 
 		<!--		<h1 class="text-center mb-">A portfolio of sorts.</h1>-->
-		<h1 id="quip" class="page-wide">
+		<h1 id="quip" class="page-wide ml mr">
 			I call them "projects" because "work" implies no fun.
 		</h1>
 
