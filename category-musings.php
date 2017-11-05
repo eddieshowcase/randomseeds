@@ -5,11 +5,11 @@
 
 get_header(); ?>
 
-<div id="page" class="homepage" role="main">
+<div id="page" class="homepage page-wide" role="main">
 	<article class="main-content p0">
 
 		<!--		<h1 class="text-center mb-">A portfolio of sorts.</h1>-->
-		<h1 id="quip" class="page-wide ml mr">
+		<h1 id="quip" class="ml mr">
 			Random experiments, thoughts, and things.
 		</h1>
 

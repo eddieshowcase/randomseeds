@@ -10,7 +10,8 @@
 
 ?>
 
-<div class="page-wide">
+<div class="row">
+<div class="page-wide column small-12 medium-6">
 
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'foundationpress' ); ?></h1>
@@ -42,4 +43,5 @@
 		<?php endif; ?>
 	</div>
 
+</div>
 </div>
