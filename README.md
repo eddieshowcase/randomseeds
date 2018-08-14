@@ -1,3 +1,7 @@
+# randomseeds
+
+This is the code base repository for my randomseeds website, which is based on FoundationPress 6.x. The original README for FoundationPress is as follows...
+
 # FoundationPress [![Build Status](https://travis-ci.org/olefredrik/FoundationPress.svg?branch=master)](https://travis-ci.org/olefredrik/FoundationPress)
 [![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/olefredrik/foundationpress?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge)
 
