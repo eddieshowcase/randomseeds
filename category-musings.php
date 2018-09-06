@@ -41,8 +41,7 @@ get_header(); ?>
 
 							// use a specific post thumbnail first
 							if (!empty($post_thumb_path)) {
-								//$post_thumb = "http://localhost/randomseeds/images/thumbs/".$post_thumb_path;
-								$post_thumb = "http://randomseeds.com/images/thumbs/".$post_thumb_path;
+								$post_thumb = "https://randomseeds.com/images/thumbs/".$post_thumb_path;
 							}
 							// else use featured image if one exists
 							else if (has_post_thumbnail()) {
@@ -57,7 +56,7 @@ get_header(); ?>
 
 							// last case: use a default stock image
 							if (empty($post_thumb)) {
-								$post_thumb = "http://randomseeds.com/images/random_rubix_2k.jpg";
+								$post_thumb = "https://randomseeds.com/images/random_rubix_2k.jpg";
 							}
 
 							?>
