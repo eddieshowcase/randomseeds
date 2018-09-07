@@ -29,10 +29,6 @@ get_header(); ?>
 						<a href="<?php the_permalink(); ?>">
 
 							<?php //the_post_thumbnail(); ?>
-							<!--							<img src="--><?php //the_post_thumbnail_url(); ?><!--" class="round-top-corners"/>-->
-							<!--							<div class="round-top-corners"
-									 style="background: url(<?php //the_post_thumbnail_url(); ?>); background-size: cover; background-position: center; height: 320px;">
-							</div> -->
 
 							<?php
 							$post_id = get_the_ID();
@@ -60,7 +56,26 @@ get_header(); ?>
 							}
 
 							?>
-							<img src="<?php echo $post_thumb ?>"/>
+							<!-- basic -->
+							<!-- <img src="<?php echo $post_thumb ?>"/> -->
+
+							<!-- via background image -->
+							<div class="post-thumb round-top-corners"
+									 style="background-image: url(<?php echo $post_thumb; ?>); background-size: cover; background-position: center; height: 320px;">
+							</div>
+
+							<!-- via landscape/portrait CSS3 transforms -->
+							<!-- <?php 
+								$portrait = false;
+								list($image_width, $image_height) = getimagesize($post_thumb);
+								if ($image_width <= $image_height) {
+									$portrait = true;
+								}
+								// echo "<br>width: " . $image_width . " height: " . $image_height . "<br>";
+							?>
+							<div class="post-thumb">
+							  <img src="<?php echo $post_thumb ?>" alt="Image" class="round-top-corners <?php if($portrait){ echo portrait; } ?>" />
+							</div> -->
 
 							<header class="p-">
 								<h2 class="mb0"><?php the_title(); ?></h2>

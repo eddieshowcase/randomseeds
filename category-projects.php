@@ -60,7 +60,13 @@ get_header(); ?>
 							}
 
 							?>
-							<img src="<?php echo $post_thumb ?>"/>
+							<!-- basic -->
+							<!-- <img src="<?php echo $post_thumb ?>"/> -->
+
+							<!-- via background image -->
+							<div class="post-thumb round-top-corners"
+									 style="background-image: url(<?php echo $post_thumb; ?>); background-size: cover; background-position: center; height: 320px;">
+							</div>
 
 							<header class="p-">
 								<h2 class="mb0"><?php the_title(); ?></h2>

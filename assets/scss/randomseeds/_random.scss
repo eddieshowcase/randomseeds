@@ -143,11 +143,6 @@ hr {
   font-size: 1.65rem;
 }
 
-.homepage img {
-  width: 100%;
-  min-height: 150px;
-}
-
 .homepage a {
   color: #222;
 }
@@ -156,8 +151,14 @@ hr {
   color: #767676;
 }
 
+// when using img for post thumbs:
 .homepage a:hover img, .homepage a:focus img {
   opacity: 0.7;
+}
+// when using background-image cover:
+.post-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  background-blend-mode: lighten;
 }
 
 .homepage a img {
@@ -182,31 +183,29 @@ label {
   background-color: #fff;
 }
 
+.post-thumb {
+  position: relative;
+  min-width: 320px;
+  min-height: 320px;
+  overflow: hidden;
+}
+.post-thumb img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  height: 100%;
+  width: auto;
+  -webkit-transform: translate(-50%,-50%);
+      -ms-transform: translate(-50%,-50%);
+          transform: translate(-50%,-50%);
+}
+.post-thumb img.portrait {
+  width: 100%;
+  height: auto;
+}
+
 #footer-container {
   border-top: $border-style;
-}
-
-
-.round-corners {
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  border-radius: 5px;
-}
-.round-top-corners {
-  -webkit-border-top-left-radius: 5px;
-  -webkit-border-top-right-radius: 5px;
-  -moz-border-radius-topleft: 5px;
-  -moz-border-radius-topright: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-.round-bottom-corners {
-  -webkit-border-bottom-left-radius: 5px;
-  -webkit-border-bottom-right-radius: 5px;
-  -moz-border-radius-bottomleft: 5px;
-  -moz-border-radius-bottomright: 5px;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
 }
 
 @include breakpoint(small only) {
