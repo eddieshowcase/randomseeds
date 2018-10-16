@@ -19,37 +19,30 @@ $border-style: 1px solid #ccc;
 }
 
 /////////////////////////////////////////////////
-// DEFAULT TO 100% WIDTH...
-// I want to use row/column grid stuff to manage layouts, sometimes fullwidth, other times page-wide.
-// Use class "page-wide" for default page width
-#page-full {
-  width: 100% !important;
-  max-width: 100%;
-}
-#single-post{
-  max-width: 100%;
-}
-#single-post .main-content {
-  width: 100% !important;
-}
-#page {
-  max-width: 100%;
-}
-#page .main-content {
-  width: 100% !important;
-}
-.row {
-  max-width: 100%;
-}
+// DEFAULT TO PAGE-WIDE (I removed and have not been using full-width, this is simpler)
+// I'm using row/column grid stuff to manage layouts, the 75rem is default for fp 6.2
+// 'page-wide' is default width
 .page-wide {
-  //TODO: this is probably a variable somewhere
+  // Now only really used for header 
   max-width: 75rem;
   margin-left: auto;
   margin-right: auto;
 }
-
-hr {
-  max-width: 100%;
+#single-post .main-content {
+  width: 100%;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  float: none;
+}
+#page .main-content {
+  width: 100%;
+  max-width: 75rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  float: none;
 }
 
 // override img max-width:100% to prevent the stretching effect in my flex layouts
@@ -169,13 +162,21 @@ hr {
 
 #quip {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 2.1em;
   font-weight: 600;
   margin-bottom: 3rem;
 }
 
 label {
   font-weight: 600;
+}
+
+blockquote {
+  margin: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: $black;
+  border-width: 2px;
 }
 
 .card-randomseeds {

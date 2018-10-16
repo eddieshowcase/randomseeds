@@ -5,8 +5,8 @@
 
 get_header(); ?>
 
-<div id="page" class="homepage page-wide" role="main">
-	<article class="main-content p0">
+<div id="page" class="homepage" role="main">
+	<article class="main-content">
 
 		<!--		<h1 class="text-center mb-">A portfolio of sorts.</h1>-->
 		<h1 id="quip" class="ml mr">
@@ -15,7 +15,7 @@ get_header(); ?>
 
 		<?php if ( have_posts() ) : ?>
 
-		<div class="row small-up-1 medium-up-2 large-up-3 page-wide">
+		<div class="row small-up-1 medium-up-2 large-up-3">
 
 		<?php /* Start the Loop */ ?>
 		<?php while ( have_posts() ) : the_post(); ?>
