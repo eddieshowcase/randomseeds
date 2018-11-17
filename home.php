@@ -31,7 +31,7 @@ get_header(); ?>
 
 							<?php
 							$post_id = get_the_ID();
-
+							$post_thumb = $post_thumb_path = '';
 							$post_thumb_path = get_post_meta( $post_id, 'thumb', true);
 
 							// use a specific post thumbnail first
