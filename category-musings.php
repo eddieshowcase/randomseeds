@@ -8,7 +8,6 @@ get_header(); ?>
 <div id="page" class="homepage" role="main">
 	<article class="main-content">
 
-		<!--		<h1 class="text-center mb-">A portfolio of sorts.</h1>-->
 		<h1 id="quip" class="ml mr">
 			Random experiments, thoughts, and things.
 		</h1>
@@ -31,7 +30,7 @@ get_header(); ?>
 							<?php //the_post_thumbnail(); ?>
 							<!--							<img src="--><?php //the_post_thumbnail_url(); ?><!--" class="round-top-corners"/>-->
 							<!--							<div class="round-top-corners"
-									 style="background: url(<?php //the_post_thumbnail_url(); ?>); background-size: cover; background-position: center; height: 320px;">
+									 style="background: url(<?php //the_post_thumbnail_url(); ?>); background-size: cover; background-position: center;">
 							</div> -->
 
 							<?php
@@ -65,7 +64,7 @@ get_header(); ?>
 
 							<!-- via background image -->
 							<div class="post-thumb round-top-corners"
-									 style="background-image: url(<?php echo $post_thumb; ?>); background-size: cover; background-position: center; height: 320px;">
+									 style="background-image: url(<?php echo $post_thumb; ?>); background-size: cover; background-position: center;">
 							</div>
 
 							<header class="p-">

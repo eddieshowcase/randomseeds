@@ -8,9 +8,8 @@ get_header(); ?>
 <div id="page" class="homepage" role="main">
 	<article class="main-content">
 
-		<!--		<h1 class="text-center mb-">A portfolio of sorts.</h1>-->
 		<h1 id="quip">
-			A portfolio of sorts.
+			<?php echo get_blogInfo('description'); ?>
 		</h1>
 
 		<?php if ( have_posts() ) : ?>
@@ -61,7 +60,7 @@ get_header(); ?>
 
 							<!-- via background image -->
 							<div class="post-thumb round-top-corners"
-									 style="background-image: url(<?php echo $post_thumb; ?>); background-size: cover; background-position: center; height: 320px;">
+									 style="background-image: url(<?php echo $post_thumb; ?>); background-size: cover; background-position: center;">
 							</div>
 
 							<!-- via landscape/portrait CSS3 transforms -->
