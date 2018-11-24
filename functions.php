@@ -54,6 +54,9 @@ require_once( 'library/responsive-images.php' );
 /** If your site requires protocol relative url's for theme assets, uncomment the line below */
 // require_once( 'library/protocol-relative-theme-assets.php' );
 
+## RANDOMSEEDS...
+require_once( 'library/random-contact-form.php');
+
 // maps wordpress 'current-menu-item' class to foundation 'active' class
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
 
