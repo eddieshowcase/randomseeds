@@ -1,4 +1,6 @@
 
+@import "../global/settings"; // Foundation settings file.
+
 $root_dev: "//localhost:3000/randomseeds/";
 $root_prod: "https://randomseeds.com/";
 $myroot: $root_prod;
@@ -6,6 +8,13 @@ $myroot: $root_prod;
 body {
   //background-color: #FAFAFA;
   background-color: #EEE;
+}
+
+.success {
+  color: $success-color;
+}
+.alert {
+  color: $alert-color;
 }
 
 $border-style: 1px solid #ccc;
