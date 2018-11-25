@@ -25,6 +25,6 @@
   
 	<div class="g-recaptcha" data-sitekey="YOUR-SITEKEY-HERE"></div>
 	
-	<input type="submit" class="button mt" value="Send"><span class="ajax-loader"></span>
+	<input type="submit" id="contactSubmit" class="button mt" value="Send"><span class="ajax-loader"></span>
 </form>
 <div id="contact_form_results"></div>	

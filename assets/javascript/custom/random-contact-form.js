@@ -8,9 +8,14 @@
   contactForm.on("submit", function(e) {
     //Prevent the default behavior of a form
     e.preventDefault();
+
+    //Disable the submit button while processing
+    $("#contactSubmit").prop( "disabled", true);
+
     //Get the values from the form
     var name = $("#contactName").val();
     var email = $("#contactEmail").val();
+    var subject = $("#contactSubject").val();
     var message = $("#contactMessage").val();
     
     if (!name || !email || !message) {
@@ -19,7 +24,7 @@
       $("#contact_form_results").html("<b>All fields are required.</b>");
       return;
     }
-    var url = window.location.origin + '/wp-admin/admin-post.php';
+    var url = window.location.origin + '/wordpress/wp-admin/admin-post.php';
     //AJAX POST
     $.ajax({
       type: "POST",
@@ -27,6 +32,7 @@
       data: {
         name: name,
         email: email,
+        subject: subject,
         message: message,
         action: "fromage_form_submit",
         //THIS WILL TELL THE FORM IF THE USER IS CAPTCHA VERIFIED.
@@ -44,6 +50,7 @@
         $("#contact_form_results").removeClass();
         $("#contact_form_results").addClass("alert");
         $("#contact_form_results").html("<b>" + response.responseText + "</b>");
+        $("#contactSubmit").prop( "disabled", false);
       }
     });
   });

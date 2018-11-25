@@ -8,7 +8,13 @@
 
 /////// CONTACT FORM
 
-//enqueue the javascript to handle form submission
+// set proper return path for email so it doesn't get sent to SPAM automatically
+add_action( 'phpmailer_init', 'fix_my_email_return_path' );
+function fix_my_email_return_path( $phpmailer ) {
+    $phpmailer->Sender = $phpmailer->From;
+}
+
+// enqueue the javascript to handle form submission
 function contact_scripts() {
   // google recaptcha
   wp_register_script("recaptcha", "https://www.google.com/recaptcha/api.js");
@@ -51,18 +57,19 @@ function contact_form_mailer() {
         $name = strip_tags(trim($_POST["name"]));
         $name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
+        $subject = trim($_POST["subject"]);
         $message = trim($_POST["message"]);
         if ( empty($name) OR empty($message) OR !filter_var($email, FILTER_VALIDATE_EMAIL)) {
           http_response_code(400);
           echo "Oops! There was a problem with your submission. Please complete the form and try again.";
           exit;
         }
-        $recipient = "youremail@somewhere.com";
-        $subject = "Random contact from $name";
+        $recipient = "youremail@here.com";
         $email_content = "Name: $name\n";
-        $email_content .= "Email: $email\n\n";
+        $email_content .= "Email: $email\n";
+        $email_content .= "Subject: $subject\n\n";
         $email_content .= "Message:\n$message\n";
-        $email_headers = "From: $name <$email>";
+        $email_headers = "From: $name <$email>\n\n";
         if (wp_mail($recipient, $subject, $email_content, $email_headers)) {
           http_response_code(200);
           echo "Thank You! Your message has been sent.";
