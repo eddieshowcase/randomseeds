@@ -23,7 +23,7 @@
     <textarea placeholder="" id="contactMessage" rows="8" aria-required="true" aria-invalid="false"></textarea>
   </label>
   
-	<div class="g-recaptcha" data-sitekey="YOUR-RECAPTCHA-SITEKEY"></div>
+	<div class="g-recaptcha" data-sitekey="YOUR-SITEKEY-HERE"></div>
 	
 	<input type="submit" class="button mt" value="Send"><span class="ajax-loader"></span>
 </form>

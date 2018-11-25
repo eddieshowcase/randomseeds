@@ -43,7 +43,7 @@ function contact_form_mailer() {
     if(isset($_POST['captcha']) && !empty($_POST['captcha'])){
 
       $captcha=$_POST['captcha'];
-      $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=YOUR-RECAPTCHA-SECRETKEY&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
+      $response=file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=YOUR-SECRETKEY-HERE&response=".$captcha."&remoteip=".$_SERVER['REMOTE_ADDR']);
       $obj = json_decode($response);
 
       // If the Google Recaptcha check was successful
@@ -57,7 +57,7 @@ function contact_form_mailer() {
           echo "Oops! There was a problem with your submission. Please complete the form and try again.";
           exit;
         }
-        $recipient = "eddieshowcase@gmail.com";
+        $recipient = "youremail@somewhere.com";
         $subject = "Random contact from $name";
         $email_content = "Name: $name\n";
         $email_content .= "Email: $email\n\n";

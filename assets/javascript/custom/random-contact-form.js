@@ -19,7 +19,7 @@
       $("#contact_form_results").html("<b>All fields are required.</b>");
       return;
     }
-    var url = window.location.origin + '/randomseeds/wordpress/wp-admin/admin-post.php';
+    var url = window.location.origin + '/wp-admin/admin-post.php';
     //AJAX POST
     $.ajax({
       type: "POST",
