@@ -9,9 +9,6 @@
     //Prevent the default behavior of a form
     e.preventDefault();
 
-    //Disable the submit button while processing
-    $("#contactSubmit").prop( "disabled", true);
-
     //Get the values from the form
     var name = $("#contactName").val();
     var email = $("#contactEmail").val();
@@ -24,6 +21,12 @@
       $("#contact_form_results").html("<b>All fields are required.</b>");
       return;
     }
+
+    //Disable the submit button while processing
+    $("#contactSubmit").prop( "disabled", true);
+    $("#contact_form_results").addClass("alert");
+    $("#contact_form_results").html("<b>Sending message... one moment.</b>");
+
     var url = window.location.origin + '/wordpress/wp-admin/admin-post.php';
     //AJAX POST
     $.ajax({

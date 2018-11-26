@@ -16,6 +16,9 @@ body {
 .alert {
   color: $alert-color;
 }
+.info {
+  color: $primary-color;
+}
 
 $border-style: 1px solid #ccc;
 .border-randomseeds {

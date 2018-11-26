@@ -15,6 +15,17 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<?php wp_head(); ?>
+		
+		<!-- Global site tag (gtag.js) - Google Analytics: randomseeds -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-129655666-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+
+		  gtag('config', 'UA-129655666-1');
+		</script>
+
 	</head>
 	<body <?php body_class(); ?>>
 	<?php do_action( 'foundationpress_after_body' ); ?>
@@ -72,23 +83,6 @@
 			</nav>
 
 		</div>
-
-
-
-
-
-<!--		--><?php //wp_nav_menu(array(
-//			'container' => false,
-//			'items_wrap' => '<ul id="%1$s" class="%2$s">%3$s</ul>',
-//			'depth' => 3,
-//			'fallback_cb' => false,
-//			'walker' => new Foundationpress_Top_Bar_Walker(),
-//			)); ?>
-
-
-
-
-
 
 	</header>
 
