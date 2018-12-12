@@ -20,7 +20,8 @@ function contact_scripts() {
   wp_register_script("recaptcha", "https://www.google.com/recaptcha/api.js");
   wp_enqueue_script("recaptcha");
   // add page condition?
-  wp_enqueue_script( 'random-contact-form');
+  //wp_enqueue_script( 'random-contact-form');
+  wp_enqueue_script( 'random-contact-form', get_template_directory_uri() . '/dist/assets/js/random-contact-form.js', array(), '1.0.0', true );
 }
 add_action( 'wp_enqueue_scripts', 'contact_scripts' );
 

@@ -1,49 +1,19 @@
 <?php
 /**
- * The template for displaying search results pages.
+ * The template for displaying search form
  *
  * @package FoundationPress
  * @since FoundationPress 1.0.0
  */
 
-get_header(); ?>
+?>
 
-<div class="row">
-	<div class="small-12 columns" role="main">
-
-		<?php do_action( 'foundationpress_before_content' ); ?>
-
-		<h2><?php _e( 'Search Results for', 'foundationpress' ); ?> "<?php echo get_search_query(); ?>"</h2>
-
-	<?php if ( have_posts() ) : ?>
-
-		<?php while ( have_posts() ) : the_post(); ?>
-			<?php get_template_part( 'template-parts/content', get_post_format() ); ?>
-		<?php endwhile; ?>
-
-		<?php else : ?>
-			<?php get_template_part( 'template-parts/content', 'none' ); ?>
-
-	<?php endif;?>
-
-	<?php do_action( 'foundationpress_before_pagination' ); ?>
-
-	<?php
-	if ( function_exists( 'foundationpress_pagination' ) ) :
-		foundationpress_pagination();
-	elseif ( is_paged() ) :
-	?>
-
-		<nav id="post-nav">
-			<div class="post-previous"><?php next_posts_link( __( '&larr; Older posts', 'foundationpress' ) ); ?></div>
-			<div class="post-next"><?php previous_posts_link( __( 'Newer posts &rarr;', 'foundationpress' ) ); ?></div>
-		</nav>
-	<?php endif; ?>
-
-	<?php do_action( 'foundationpress_after_content' ); ?>
-
+<form role="search" method="get" id="searchform" action="<?php echo home_url( '/' ); ?>">
+	<div class="input-group">
+		<input type="text" class="input-group-field" value="" name="s" id="s" aria-label="Search" placeholder="<?php
+		esc_attr_e( 'Search', 'foundationpress' ); ?>">
+		<div class="input-group-button">
+			<input type="submit" id="searchsubmit" value="<?php esc_attr_e( 'Search', 'foundationpress' ); ?>" class="button">
+		</div>
 	</div>
-	<?php get_sidebar(); ?>
-</div>
-
-<?php get_footer();
+</form>
