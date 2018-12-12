@@ -24,7 +24,7 @@
 
     //Disable the submit button while processing
     $("#contactSubmit").prop( "disabled", true);
-    $("#contact_form_results").addClass("alert");
+    $("#contact_form_results").addClass("info");
     $("#contact_form_results").html("<b>Sending message... one moment.</b>");
 
     var url = window.location.origin + '/wordpress/wp-admin/admin-post.php';
