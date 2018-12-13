@@ -28,15 +28,10 @@
 
 	</head>
 	<body <?php body_class(); ?>>
-	<?php do_action( 'foundationpress_after_body' ); ?>
 
-<!--	--><?php //if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
-<!--	<div class="off-canvas-wrapper">-->
-<!--		<div class="off-canvas-wrapper-inner" data-off-canvas-wrapper>-->
-<!--		--><?php //get_template_part( 'template-parts/mobile-off-canvas' ); ?>
-<!--	--><?php //endif; ?>
-
-	<?php do_action( 'foundationpress_layout_start' ); ?>
+	<?php if ( get_theme_mod( 'wpt_mobile_menu_layout' ) === 'offcanvas' ) : ?>
+		<?php get_template_part( 'template-parts/mobile-off-canvas' ); ?>
+	<?php endif; ?>
 
 	<header id="masthead" class="site-header" role="banner">
 
@@ -53,36 +48,32 @@
 
 		</div>
 
-		<div id="nav-wrap">
+		<!-- Mobile -->
+		<div class="site-title-bar title-bar align-center" <?php foundationpress_title_bar_responsive_toggle(); ?>>
+			<div class="title-bar-left">
+				<button aria-label="<?php _e( 'Main Menu', 'foundationpress' ); ?>" class="menu-icon" type="button" data-toggle="<?php foundationpress_mobile_menu_id(); ?>"></button>
+				<span class="site-mobile-title title-bar-title">
+				<!-- 	<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a> -->
+				Menu
+				</span>
+			</div>
+		</div>
 
-			<!-- Mobile-->
-			<div class="title-bar align-center" data-responsive-toggle="site-navigation">
-				<button class="menu-icon" type="button" data-toggle="site-navigation"></button>
-				<div class="title-bar-title">
-					<a href="#" data-toggle="site-navigation">MENU</a>
+		<!-- Desktop -->
+		<nav class="site-navigation top-bar" role="navigation">
+			<div class="top-bar-left">
+				<div class="site-desktop-title top-bar-title">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 				</div>
 			</div>
+			<div class="top-bar-right">
+				<?php foundationpress_top_bar_r(); ?>
 
-			<!-- Desktop -->
-			<nav id="site-navigation" class="main-navigation top-bar page-wide" role="navigation">
-				<div class="top-bar-left">
-
-					<?php foundationpress_top_bar_r(); ?>
-
-					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
-						<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-					<?php endif; ?>
-				</div>
-				<div class="top-bar-right">
-					<?php foundationpress_top_bar_r(); ?>
-
-					<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
-						<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
-					<?php endif; ?>
-				</div>
-			</nav>
-
-		</div>
+				<?php if ( ! get_theme_mod( 'wpt_mobile_menu_layout' ) || get_theme_mod( 'wpt_mobile_menu_layout' ) === 'topbar' ) : ?>
+					<?php get_template_part( 'template-parts/mobile-top-bar' ); ?>
+				<?php endif; ?>
+			</div>
+		</nav>
 
 	</header>
 

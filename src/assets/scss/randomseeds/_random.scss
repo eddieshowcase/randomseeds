@@ -107,16 +107,15 @@ $border-style: 1px solid #ccc;
   opacity: 0.8;
 }
 
-#nav-wrap {
-  background-color: #fff;
-}
-
 .top-bar, .top-bar ul {
   background-color: transparent;
 }
 
 // Tablet and desktop menu
 .top-bar {
+
+  background-color: $white;
+
   .menu a {
     color: #222;
     font-weight: 600;
@@ -238,12 +237,8 @@ blockquote {
     font-size: 1.5rem;
   }
 
-  #site-navigation {
-    border-bottom: $border-style;
-  }
-
   .top-bar, .top-bar ul {
-    padding: 0.25rem 0.625rem;
+    padding-left: 0.625rem;
   }
 
   .top-bar {
@@ -255,7 +250,8 @@ blockquote {
   }
 
   .title-bar {
-    background: inherit;
+    color: #222;
+    background: $white;
     border-bottom: $border-style;
   }
 
@@ -269,6 +265,11 @@ blockquote {
 
   .homepage h2 {
     font-size: 1.35rem;
+  }
+
+  .main-content {
+    padding-left: .9375rem !important;
+    padding-right: .9375rem !important;
   }
 
   #quip {
@@ -285,11 +286,20 @@ blockquote {
 
 @include breakpoint(medium up) {
 
-  #nav-wrap {
-    border-bottom: $border-style;
+  .top-bar-left {
+    display: none;
+  }
+
+  .top-bar .top-bar-right {
+    width: 100%;
+    max-width: 75rem;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .top-bar {
+
+    border-bottom: $border-style;
 
     .menu a {
       height: 70px;
@@ -304,11 +314,12 @@ blockquote {
 
   }
 
-  .top-bar-right {
-    display: none;
-  }
-
   .top-bar-left {
     margin-left: 0.9375rem;
   }
+
+  .top-bar .menu > li:not(.menu-text) > a {
+    padding-left: 0.9375rem;
+  }
+
 }
